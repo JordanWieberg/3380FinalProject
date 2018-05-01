@@ -65,22 +65,22 @@ if ($_SESSION['loggedin'] == true) {
     
 
         <div class="content">
-            <h1>Dungeons and Dragons: For New Players</h1>
-            <h2>Welcome! This site is intended to serve as an introduction to DnD for prospective players!</h2>
+            <h1>Jables Tables: A Jack Black fan-base</h1>
+            <h2>Welcome! This is a site dedicated to preserving the legend of beloved comedian and dramatic actor, Thomas Jacob "Jack" Black</h2>
             <br>
             <div class="container">
-                <h1>WHAT IS DND?</h1>
+                <h1>Movies</h1>
                 <a href="movies.php">
                     <img class="learn" src="Jacks/PoD.jpg" alt="learn">
                 </a>
-                <p class="dragon">Learn what Dungeons and Dragons is all about</p>
+                <p class="dragon">Browse Jack Black's filmography</p>
             </div>
             <br>
             <div class="container">
-                <h1>CHARACTER CREATION</h1>
+                <h1>Music</h1>
                 <p class="character"><a href="music.php">
                     <img class="create" src="Jacks/tenaciousD.jpg" alt="create">
-                </a><br><br>Learn what goes into creation of a DnD character</p>
+                </a><br><br>Browse Jack's earbud tickling tunes</p>
                 <br>
                 <br>
                 <br>
