@@ -98,7 +98,7 @@
   		    if ($match == 1) {
                 $_SESSION['loggedin'] = $username;
                 $_SESSION['loggedin'] = true;
-                header("Location: protected.php");
+                header("Location: profile.php");
                 exit;
             }
             else {
