@@ -35,7 +35,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Sample Combat</title>
+	<title>Profile</title>
     <link rel="stylesheet" type="text/css" href="common.css">
     <script src="jquery-3.2.1.js"></script>
     
@@ -86,23 +86,40 @@ if ($_SESSION['loggedin'] == true) {
         <li class="nav" id="log"><a href="logout.php">Log out</a></li>
         <li class="nav" id="log"><a href="login.php">Log in</a></li>
     </ul>
-    <img class="left" src="images/elf.jpg" alt="elf">
-    <img class="right" src="images/enemy.jpg" alt="enemy">
-    <div class="combat">
-<!--        further use of einstein quote example from class notes-->
-        <h1 id="combatTitle">Sample Combat</h1>
-	<div class="fight">
-	<input type="image" src="images/d20.jpg" class="die" value="Turn 1" onclick="updateInfo('quote1')">
-	<input type="image" src="images/d20.jpg" class="die" value="Turn 2" onclick="updateInfo('quote2')">
-	<input type="image" src="images/d20.jpg" class="die" value="Turn 3" onclick="updateInfo('quote3')">
-	<input type="image" src="images/d20.jpg" class="die" value="Turn 4" onclick="updateInfo('quote4')">
-	<input type="image" src="images/crit.png" class="die" id="crit" value="Turn 5" onclick="updateInfo('quote5')">
-    </div>
-	<div id="infoBox">Click one of the buttons above to experience a simulated round of combat.</div>
-        
-
+    <form action="updateProfile_form.php" method="POST">
+        <input type="hidden" name="action" value="do_update">
+        <div class="content">
+            <div class="stack">
+                <label for="username">User name: <?php print $username; ?></label>
+            </div>
     
-    </div>
+            <div class="stack">
+                <label for="firstName">First name:</label>
+            </div>
+            
+            <div class="stack">
+                <label for="lastName">Last name:</label>
+            </div>
+        
+            <div class="stack">
+                <label for="pasword">Password:</label>
+            </div>
+            
+            <div class="stack">
+                <label  for="favoriteMovie">Favorite Movie:</label>
+            </div>
+            
+            <div class="stack">
+                <label  for="favoriteSong">Favorite Song:</label>
+            </div>
+            
+            <div class="stack">
+                <input type="submit" value="Submit">
+            </div>
+        </div>
+    </form>
+    
+    
     <br>
     <br>
     <br>

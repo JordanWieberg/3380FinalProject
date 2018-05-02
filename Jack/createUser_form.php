@@ -68,7 +68,6 @@ if ($_SESSION['loggedin'] == true) {
             
             <input type="hidden" name="action" value="do_create">
             
-<!--
             <div class="stack">
                 <label for="firstName">First name:</label>
                 <input type="text" id="firstName" name="firstName" class="ui-widget-content ui-corner-all" autofocus required>
@@ -78,7 +77,6 @@ if ($_SESSION['loggedin'] == true) {
                 <label for="lastName">Last name:</label>
                 <input type="text" id="lastName" name="lastName" class="ui-widget-content ui-corner-all " required>
             </div>
--->
             
             <div class="stack">
             <label for="favMovie">Favorite Movie:</label>
@@ -89,7 +87,8 @@ if ($_SESSION['loggedin'] == true) {
                 <option value="Jack4">Jack4</option>
                 </select>
                 <br><br>
-                <input type="submit">
+                <input type="submit" id="favMovie" name="favMovie"
+                       class ="ui-widget-content ui-corner-all" required hidden>
 <!--
                 <input type="radio" id="favMovie" name="favMovie"
                  class="ui-widget-content ui-corner-all" required>

@@ -23,7 +23,7 @@
 	$loggedIn = empty($_SESSION['loggedin']) ? false : $_SESSION['loggedin'];
 	
 	if ($loggedIn) {
-		header("Location: protected.php");
+		header("Location: profile.php");
 		exit;
 	}
 	
@@ -98,7 +98,7 @@
   		    if ($match == 1) {
                 $_SESSION['loggedin'] = $username;
                 $_SESSION['loggedin'] = true;
-                header("Location: protected.php");
+                header("Location: profile.php");
                 exit;
             }
             else {
