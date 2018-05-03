@@ -35,30 +35,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Sample Combat</title>
+	<title>Profile</title>
     <link rel="stylesheet" type="text/css" href="common.css">
     <script src="jquery-3.2.1.js"></script>
     
 <!--    <script src="app.js"></script>-->
     
 <!--    taken from in class einstein quote example-->
-    <script>
-		function updateInfo(quoteID) {
-			var xmlHttp = new XMLHttpRequest();
-		
-			xmlHttp.onload = function() {
-				if (xmlHttp.status == 200) {
-					var infoBox = document.getElementById('infoBox');
-					infoBox.innerHTML = xmlHttp.responseText;
-				  }
-			}
-		
-			var reqURL = "updateInfo.php?infoId=" + quoteID;
-		
-			xmlHttp.open("GET", reqURL, true);
-			xmlHttp.send();
-		}
-	</script>
 	
     
     
@@ -68,10 +51,10 @@
     
     <!--    coded based on example on w3 school-->
     <ul class="nav">
-        <li class="nav"><a class="active" href="index.php">Home</a></li>
+        <li class="nav"><a href="index.php">Home</a></li>
         <li class="nav"><a href="movies.php">Movies de Jack</a></li>
         <li class="nav"><a href="music.php">The Music</a></li>
-        <li class="nav"><a href="profile.php">Profile</a></li>
+        <li class="nav"><a class="active" href="profile.php">Profile</a></li>
         <?php
 if ($_SESSION['loggedin'] == true) {
 ?>
@@ -86,30 +69,53 @@ if ($_SESSION['loggedin'] == true) {
         <li class="nav" id="log"><a href="logout.php">Log out</a></li>
         <li class="nav" id="log"><a href="login.php">Log in</a></li>
     </ul>
+<!--
     <img class="left" src="images/elf.jpg" alt="elf">
     <img class="right" src="images/enemy.jpg" alt="enemy">
-    <div class="combat">
-<!--        further use of einstein quote example from class notes-->
-        <h1 id="combatTitle">Sample Combat</h1>
-	<div class="fight">
-	<input type="image" src="images/d20.jpg" class="die" value="Turn 1" onclick="updateInfo('quote1')">
-	<input type="image" src="images/d20.jpg" class="die" value="Turn 2" onclick="updateInfo('quote2')">
-	<input type="image" src="images/d20.jpg" class="die" value="Turn 3" onclick="updateInfo('quote3')">
-	<input type="image" src="images/d20.jpg" class="die" value="Turn 4" onclick="updateInfo('quote4')">
-	<input type="image" src="images/crit.png" class="die" id="crit" value="Turn 5" onclick="updateInfo('quote5')">
-    </div>
-	<div id="infoBox">Click one of the buttons above to experience a simulated round of combat.</div>
+-->
+    <div class="content">
+    <?php
         
+$servername = "sql204.epizy.com";
+$username = "epiz_21518000";
+$password = "HrWpxPtThBy0";
+$dbname = "epiz_21518000_Jack";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "SELECT * FROM users";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    echo "<table><tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Username</th><th>FavMovie</th><th>FavSong</th></tr>";
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "<tr><td>".$row["id"]."</td><td>".$row["firstName"]."</td><td>".$row["lastName"]."</td><td>".$row["username"]."</td><td>".$row["favMovie"]."</td></tr>";
+    }
+    echo "</table>";
+} else {
+    echo "0 results";
+}
+$conn->close();
+ ?>
 
     
+   
+    
+    <br>
+    <br>
+        <a href="updateProfile_form.php">Update your profile</a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 </body>
 </html>
