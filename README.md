@@ -1,8 +1,8 @@
 # 3380FinalProject
-Jordan Wieberg
-Andrew Ziber
-Thomas Newman
-Tyler Blood
+* Jordan Wieberg
+* Andrew Ziber
+* Thomas Newman
+* Tyler Blood
 ## Description of Application
 
 ## Schema for the Database
