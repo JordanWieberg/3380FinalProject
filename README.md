@@ -4,6 +4,7 @@
 * Thomas Newman
 * Tyler Blood
 ## Link to Application
+(It is recommended to clear your cache for the CSS file to work as intended.)
 URL: 
 ## Description of Application
 
