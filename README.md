@@ -6,12 +6,12 @@ Andrew Ziber
 Thomas Newman
 Tyler Blood
 
-#### Description of Application
+# Description of Application
 
-#### Schema for the Database
+# Schema for the Database
 
-#### Entity Relational Diagram
+## Entity Relational Diagram
 
-#### CRUD Explanation
+## CRUD Explanation
 
-#### Video Demonstration
+### Video Demonstration
