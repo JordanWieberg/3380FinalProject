@@ -45,13 +45,13 @@ favSong varchar(255)not null
 ## Entity Relational Diagram
 
 ## CRUD Explanation
-  ## Create
+  ###### Create
   Users are to create a profile. When a profile is created it is added to the user’s table. The code used to create a user is in  createuser.php.
-  ## Read
+  ###### Read
   The movies and music pages are displayed on movies.php and music.php respectively. The tables that are used are the movies/music tables.
-  ## Update
+  ###### Update
   When a user is logged in they are able to update their favorite movie and music, which is located in updateuserform.php. Allowing them to change from one movie/ song to another.  
-  ## Delete
+  ###### Delete
   User are to delete their account. The script that is called for them to delete their account is located in  updateuserform.php. 
 ## Video Demonstration
 URL: 
