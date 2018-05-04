@@ -43,8 +43,7 @@ favSong varchar(255)not null
 );
 ```
 ## Entity Relational Diagram
-![ERD]
-(https://github.com/JordanWieberg/3380FinalProject/blob/master/ERD.jpg)
+![ERD](https://github.com/JordanWieberg/3380FinalProject/blob/master/ERD.jpg)
 ## CRUD Explanation
   ###### Create
   Users are to create a profile. When a profile is created it is added to the user’s table. The code used to create a user is in  createuser.php.
