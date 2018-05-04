@@ -1,4 +1,5 @@
-# 3380FinalProject
+### Jables Tables: A Jack Black Fan-Base
+## 3380FinalProject
 * Jordan Wieberg
 * Andrew Ziber
 * Thomas Newman
@@ -40,6 +41,7 @@ id int primary key auto_increment,
 username varchar(255) not null unique,
 password text not null,
 firstName varchar(255) not null,
+
 lastName varchar(255) not null, 
 favMovie varchar(255) not null, 
 favSong varchar(255)not null
