@@ -9,6 +9,7 @@ URL:
 ## Description of Application
 The main purpose of our application is to create the one stop shop for all Jack Black fanatics or Jables as we like to be called. Our application Jables Tables is a one stop shop to get all your information about Jack Black from his extremely funny movies to his beautiful music from his hit rock band Tenacious D. What Jables Tables purpose is to allow users to vote on their favorite Jack Black music or movie and show that to everyone. A user can create an account and show their favorite song or favorite movie that Jack Black has blessed with his presence. Users can see each of Jack Blacks movies and the Rotten Tomato score, how well the movie did at the box office, and what another user set as their favorite movie. You can also view Jack Blacks entire discography being able to easily see each song length, title, and what album it was on. Jables Tables is the one stop shop for all Jack Black fanatics. 
 ## Schema for the Database
+###### Movies
 ``` sql
 CREATE TABLE movies (
 id int not null auto_increment primary key,
@@ -20,6 +21,7 @@ releasedate varchar(128) not null,
 favCount int not null
 );
 ```
+###### Music
 ``` sql
 CREATE TABLE music (
 id int not null auto_increment primary key,
@@ -31,8 +33,9 @@ releasedate varchar(128) not null,
 favCount int not null
 );
 ```
+###### Users
 ``` sql
-create table users (
+CREATE TABLE users (
 id int primary key auto_increment,
 username varchar(255) not null unique,
 password text not null,
