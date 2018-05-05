@@ -118,7 +118,7 @@ if ($_SESSION['loggedin'] == true) {
         </form>
         
         <form action="delete.php" method="POST">
-            <input type="submit" value="Fucking kill my account">
+            <input type="submit" value="Delete My Account">
         </form>
         
         <br>
