@@ -59,4 +59,4 @@ favSong varchar(255)not null
   ###### Delete
   User are to delete their account. The script that is called for them to delete their account is located in  updateuserform.php. 
 ## Video Demonstration
-URL: 
+URL: [I'm an inline-style link]https://www.youtube.com/watch?v=rhFkBOHD3XY
