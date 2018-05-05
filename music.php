@@ -23,14 +23,10 @@
         Videos on DND
 -->
 <!DOCTYPE html>
-<!-- Thomas Newman
-     tjn2zf
-     December 8, 2017
--->
 <html>
 <head>
     <meta charset="utf-8">
-	<title>About DnD</title>
+	<title>Music</title>
     <link rel="stylesheet" type="text/css" href="common.css">
     <script src="jquery-3.2.1.js"></script>
 	
@@ -62,7 +58,7 @@ if ($_SESSION['loggedin'] == true) {
     <div class="content table">
 <?php
   try {
-  $con= new PDO('mysql:host=sql204.epizy.com;dbname=epiz_21518000_Jack', "epiz_21518000", "HrWpxPtThBy0");
+  $con= new PDO('mysql:host=localhost;port=3306;dbname=CS2830', "ec2-user", "nick");
   $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $query = "SELECT * FROM music";
   //first pass just gets the column names

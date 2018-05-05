@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<!-- Thomas Newman
-     tjn2zf
-     December 8, 2017
--->
-<!-- based on in class lecture-->
 <html>
 <head>
 	<title>Create User Account</title>
@@ -95,9 +90,8 @@ if ($_SESSION['loggedin'] == true) {
             
              <div class="stack">
             <label for="favMovie">Favorite Movie:</label>
-                 <input type="text" id="favMovie" name="favMovie" required>
-                 <select name="Movies" size="4">
-                <option value="Jack1">Jack1</option>
+                 <select name="favMovie" size="4" required>
+                <option value="School of Rock">School of Rock</option>
                 <option value="Jack2">Jack2</option>
                 <option value="Jack3">Jack3</option>
                 <option value="Jack4">Jack4</option>
@@ -108,8 +102,7 @@ if ($_SESSION['loggedin'] == true) {
             
             <div class="stack">
             <label for="favSong">Favorite Song:</label>
-                <input type="text" id="favSong" name="favSong" required>
-                 <select name="Music" size="4">
+                <select name="favSong" size="4" required>
                 <option value="Jack1">Jack1</option>
                 <option value="Jack2">Jack2</option>
                 <option value="Jack3">Jack3</option>

@@ -22,10 +22,6 @@
 ?>
 
 <!DOCTYPE html>
-<!-- Thomas Newman
-     tjn2zf
-     December 8, 2017
--->
 <!--Functionality:
     allow user to access login restricted content
     character creator
@@ -76,10 +72,10 @@ if ($_SESSION['loggedin'] == true) {
     <div class="content">
     <?php
         
-$servername = "sql205.epizy.com";
-$username = "epiz_21505687";
-$password = "LRW93MG3taeB";
-$dbname = "epiz_21505687_jackblack";
+$servername = "localhost";
+$username = "ec2-user";
+$password = "nick";
+$dbname = "CS2830";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

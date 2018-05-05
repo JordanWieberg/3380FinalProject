@@ -23,7 +23,7 @@
 	$loggedIn = empty($_SESSION['loggedin']) ? false : $_SESSION['loggedin'];
 	
 	if ($loggedIn) {
-		header("Location: protected.php");
+		header("Location: profile.php");
 		exit;
 	}
 	
@@ -33,7 +33,7 @@
 	if ($action == 'do_create') {
 		create_user();
 	} else {
-		updateProfile_form();
+		login_form();
 	}
 	
 	function create_user() {
@@ -55,32 +55,25 @@
             // Check for errors
             if ($mysqli->connect_error) {
                 $error = 'Error: ' . $mysqli->connect_errno . ' ' . $mysqli->connect_error;
-                //require "login_form.php";
+                require "updateProfile_form.php";
                 exit;
             }
 
-            // Build query
-//            $query = "SELECT id FROM users WHERE userName = '$username' AND password = '$password'";
-//            $query = "insert into users (firstName, lastName, username, password) values ('$firstName', '$lastName', '$username', '$password')";
-//        
-//           $query ="" UPDATE Customers
-//                SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
-//WHERE CustomerID = 1; ""
-
     
-   $query = "UPDATE users SET favMovie='$favMovie' favSong='$favSong' WHERE id=2;"
+   $user = $_SESSION["username"];
+   $query = "UPDATE users SET favMovie=$favMovie favSong=$favSong WHERE username='$user'";
             // Sometimes it's nice to print the query. That way you know what SQL you're working with.
-            print $query;
+            //print $query;
             //exit;
-
+$results = $mysqli->query($query);
 
             // If there was a result...
-            if ($mysqli->query($query) == TRUE) {
-                
+            if ($results == TRUE) {
+                var_dump($results);
                 // Close the DB connection
                 $mysqli->close();
                 
-                $error = "Oops";
+                $error = "Success";
                 require "updateProfile_form.php";
                 exit;
                 }
@@ -92,7 +85,7 @@
             }
 
             
-        }
+        
             // Else, there was no result
             else {
               $error = 'Woops';
@@ -101,11 +94,11 @@
             }
         }
 	
-//	function login_form() {
-//		$username = "";
-//		$error = "";
-//		require "login_form.php";
-//        exit;
-//	}
+	function login_form() {
+		$username = "";
+		$error = "";
+		require "updateProfile_form.php";
+        exit;
+	}
 	
 ?>

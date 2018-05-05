@@ -84,6 +84,12 @@
             // If there was a result...
             if ($mysqli->query($query) == TRUE) {
                 
+                $sql_count = "SELECT COUNT(favMovie) FROM users WHERE title = '$favMovie';";
+                
+                $query_Movie = "UPDATE movies SET favCount = $sql_countMovie Where title = '$favMovie';";
+                
+                $mysqli->query($query_Movie);
+                
                 // Close the DB connection
                 $mysqli->close();
                 

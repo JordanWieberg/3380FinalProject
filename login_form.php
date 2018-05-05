@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!-- Thomas Newman
-     tjn2zf
-     December 8, 2017
--->
 <!-- Based on in class lecture code -->
 <html>
 <head>

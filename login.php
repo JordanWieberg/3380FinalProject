@@ -49,6 +49,9 @@
 		}
         */
         
+        
+        //$_SESSION['loggedin'] = $username
+        
         // We added the test user to our users table
         // INSERT INTO users (username, password, addDate, changeDate) VALUES ('test', 'pass', NOW(), NOW());
         
@@ -82,7 +85,7 @@
         
 		// Run the query
 		$mysqliResult = $mysqli->query($query);
-		
+		$_SESSION['id']= $mysqliResult;
         // If there was a result...
         if ($mysqliResult) {
             // How many records were returned?
@@ -144,7 +147,7 @@
 	
 </head>
 <body>
-     <h1> <img class="logo" src="Jacks/jackskin.jpg" alt="jack1"> </h1>
+     <h1> <img class="logo" src="Jacks/jack1.jpg" alt="jack1"> </h1>
     
     <!--    coded based on example on w3 school-->
     <ul class="nav">

@@ -18,10 +18,6 @@
 ?>
 
 <!DOCTYPE html>
-<!-- Thomas Newman
-     tjn2zf
-     December 8, 2017
--->
 <!-- Functionality:
     Should display homepage
     Include link to protected content, redirect to login if not logged in

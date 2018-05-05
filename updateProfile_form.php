@@ -1,9 +1,26 @@
+<?php
+// Taken from in class lecture notes
+
+    // HTTPS redirect
+    if ($_SERVER['HTTPS'] !== 'on') {
+		$redirectURL = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+		header("Location: $redirectURL");
+		exit;
+	}
+    
+	// Every time we want to access $_SESSION, we have to call session_start()
+	if(!session_start()) {
+		header("Location: error.php");
+		exit;
+	}
+	
+	$loggedIn = empty($_SESSION['loggedin']) ? false : $_SESSION['loggedin'];
+	if (!$loggedIn) {
+		header("Location: login.php");
+		exit;
+	}
+?>
 <!DOCTYPE html>
-<!-- Thomas Newman
-     tjn2zf
-     December 8, 2017
--->
-<!-- based on in class lecture-->
 <html>
 <head>
 	<title>Update your account</title>
@@ -11,6 +28,7 @@
     <link href="../jquery-ui-1.11.4.custom/jquery-ui.min.css" rel="stylesheet" type="text/css">
     <script src="../jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
     <script src="../jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+<!--
     <script>
         $(function(){
             $("input[type=submit]").button();
@@ -30,6 +48,7 @@
             });
         });
     </script>
+-->
 </head>
 <body>
     <h1> <img class="logo" src="Jacks/jack1.jpg" alt="jack1"> </h1>
@@ -70,8 +89,7 @@ if ($_SESSION['loggedin'] == true) {
             
              <div class="stack">
             <label for="favMovie">Favorite Movie:</label>
-                 <input type="text" id="favMovie" name="favMovie" required>
-                 <select name="Movies" size="4">
+                 <select name="favMovie" size="4">
                 <option value="Jack1">Jack1</option>
                 <option value="Jack2">Jack2</option>
                 <option value="Jack3">Jack3</option>
@@ -83,8 +101,7 @@ if ($_SESSION['loggedin'] == true) {
             
             <div class="stack">
             <label for="favSong">Favorite Song:</label>
-                <input type="text" id="favSong" name="favSong" required>
-                 <select name="Music" size="4">
+                 <select name="favSong" size="4">
                 <option value="Jack1">Jack1</option>
                 <option value="Jack2">Jack2</option>
                 <option value="Jack3">Jack3</option>
@@ -98,6 +115,10 @@ if ($_SESSION['loggedin'] == true) {
             <div class="stack">
                 <input type="submit" value="Submit">
             </div>
+        </form>
+        
+        <form action="delete.php" method="POST">
+            <input type="submit" value="Fucking kill my account">
         </form>
         
         <br>

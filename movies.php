@@ -23,14 +23,10 @@
         Videos on DND
 -->
 <!DOCTYPE html>
-<!-- Thomas Newman
-     tjn2zf
-     December 8, 2017
--->
 <html>
 <head>
     <meta charset="utf-8">
-	<title>About DnD</title>
+	<title>Movies</title>
     <link rel="stylesheet" type="text/css" href="common.css">
     <style>
 /*
@@ -71,7 +67,7 @@ if ($_SESSION['loggedin'] == true) {
         
         <?php
   try {
-  $con= new PDO('mysql:host=sql205.epizy.com;dbname=epiz_21505687_jackblack', "epiz_21505687", "LRW93MG3taeB");
+  $con= new PDO('mysql:host=localhost;port=3306;dbname=CS2830', "ec2-user", "nick");
   $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $query = "SELECT * FROM movies";
   //first pass just gets the column names

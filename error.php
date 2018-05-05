@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--
-Thomas Newman
-tjn2zf
--->
 <!-- Created by Professor Wergeles for CS2830 at the University of Missouri -->
 <html>
 <head>
